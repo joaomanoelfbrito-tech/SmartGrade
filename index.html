@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartGrade - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(90deg, #3249da, #db1bd6);
+            --text-color: #333;
+            --input-border: #e0e0e0;
+            --link-color: #7d2ae8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text-color);
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Logo e Título */
+        .logo-section {
+            margin-bottom: 2rem;
+        }
+
+        .logo-placeholder {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        .brand-name {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: #2b1f64;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p.subtitle {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Formulário */
+        .form-group {
+            text-align: left;
+            margin-bottom: 1.2rem;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        input[type="email"], 
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 12px 12px 45px;
+            border: 1px solid var(--input-border);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            transition: border 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--link-color);
+        }
+
+        .forgot-password {
+            float: right;
+            font-size: 0.75rem;
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Checkbox */
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: #666;
+            margin: 1.5rem 0;
+        }
+
+        input[type="checkbox"] {
+            accent-color: var(--link-color);
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Botão Entrar */
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: var(--primary-gradient);
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Divisor */
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 1.5rem 0;
+            color: #aaa;
+            font-size: 0.8rem;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #eee;
+        }
+
+        .divider:not(:empty)::before { margin-right: .5em; }
+        .divider:not(:empty)::after { margin-left: .5em; }
+
+        /* Botões Sociais */
+        .social-login {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-social {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid var(--input-border);
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Rodapé */
+        .footer-links {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .footer-links a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .bottom-nav {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 0.75rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <div class="logo-section">
+        <svg class="logo-placeholder" viewBox="0 0 512 512" fill="#4c39cc">
+            <path d="M256 32L32 176l224 144 224-144L256 32z"/>
+            <path d="M464 242.3V352c0 17.7-14.3 32-32 32H80c-17.7 0-32-14.3-32-32V242.3L256 357.1l208-114.8z"/>
+        </svg>
+        <div class="brand-name">SmartGrade</div>
+    </div>
+
+    <h1>Bem-vindo</h1>
+    <p class="subtitle">Acesse sua conta de professor.</p>
+
+    <form>
+        <div class="form-group">
+            <label>E-mail</label>
+            <div class="input-wrapper">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" placeholder="nome@instituicao.edu" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <a href="#" class="forgot-password">Esqueceu a senha?</a>
+            <label>Senha</label>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="••••••••" required>
+            </div>
+        </div>
+
+        <div class="remember-me">
+            <input type="checkbox" id="remember" checked>
+            <label for="remember" style="margin-bottom: 0;">Lembrar-me</label>
+        </div>
+
+        <button type="submit" class="btn-login">Entrar</button>
+    </form>
+
+    <div class="divider">ou continue com</div>
+
+    <div class="social-login">
+        <button class="btn-social">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" width="18" alt="Google">
+            Google
+        </button>
+        <button class="btn-social">
+            <i class="fa-brands fa-apple" style="font-size: 1.2rem;"></i>
+            Apple
+        </button>
+    </div>
+
+    <div class="footer-links">
+        Não tem uma conta? <a href="#">Criar conta</a>
+    </div>
+
+    <div class="bottom-nav">
+        <span>Ajuda</span>
+        <span>Privacidade</span>
+        <span>Termos</span>
+    </div>
+</div>
+
+</body>
+</html>
